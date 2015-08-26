@@ -1,0 +1,22 @@
+production: true
+# Site settings
+title: PhoneGap
+description: "Easily create apps using the web technologies you know and love: HTML, CSS, and JavaScript."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://phonegap.com" # the base hostname & protocol for your site
+twitter_username: phonegap
+github_username:  phonegap
+
+paginate: 10
+paginate_list_count: 7
+paginate_path: "/blog/page:num/"
+
+# Build settings
+markdown: kramdown
+
+permalink: /:categories/:year/:month/:day/:title/
+highlighter: pygments
+excerpt_separator: <!--more-->
+exclude: [vendor]
+
+css_base: "/styles"

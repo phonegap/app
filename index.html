@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="subheader">
+  <div class="bounds">
+    <h1>Get Started</h1>
+    <div class="subheader__description">Follow these steps to install PhoneGap and get an app running on your mobile device in minutes.</div>
+  </div>
+</div>
+<div class="bounds">
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+<div class="sub-footer">
+  <div class="bounds">
+    <h2>Dig into documentation</h2>
+    <div class="sub-footer__description">
+      Whether you’re looking for <a href="#">in-depth guides</a> on how to build better PhoneGap apps, or <a href="#">references</a> to APIs, configuration and usage this is the place to go. You’ll also find documentation for both PhoneGap and Cordova <a href="#">plugins</a>. How could you go wrong?
+    </div>
+  </div>
+</div>
