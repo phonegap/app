@@ -1,0 +1,40 @@
+.eu-header-bounds
+  @extend .bounds
+  width 100%
+  height 330px
+  background url('/img/pgday-eu-logo.svg') no-repeat center, url('/img/pgday-eu-bg.svg') no-repeat center
+  background-size contain, cover
+  background-blend-mode multiply
+  background-attachment scroll, fixed
+.eu-main-header
+  .header-title
+    background url('/img/pgday-eu-bg-light.svg') no-repeat center rgb(23, 147, 179)
+    background-size cover
+    background-attachment fixed
+.main-content.eu-content
+  background url('/img/pgday-eu-bg-dark.svg') no-repeat center #FFF
+  background-size cover
+  background-attachment fixed
+.subhead.eu-subhead
+  left 0
+@media only screen and (min-width: 360px)
+  .eu-header-bounds
+    height 380px
+  .subhead.eu-subhead
+    margin-top 10px
+@media only screen and (min-width: 600px)
+  .eu-header-bounds
+    height 532px
+@media only screen and (min-width: 800px)
+  .eu-header-bounds
+    height 440px
+@media only screen and (min-width: 1030px)
+  .eu-header-bounds
+    height 840px
+  .subhead.eu-subhead
+    margin-top 30px
+@media only screen and (min-width: 1280px)
+  .eu-header-bounds
+    width 100%
+    height 85vh
+    max-width 100%
