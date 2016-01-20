@@ -6,9 +6,10 @@
   "scripts": {
     "webpack": "webpack --progress --colors",
     "dev": "webpack-dev-server --progress --colors",
+    "build": "node build_data.js",
     "build:images": "imagemin ./img ./_site/img",
     "build:production": "npm run webpack && npm run build:images",
-    "start": "npm run dev",
+    "start": "node build_data.js && npm run dev",
     "deploy": "npm run build:production && git subtree push --prefix _site origin gh-pages"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "babel-preset-react": "^6.1.18",
     "circular-json": "^0.3.0",
     "css-loader": "^0.23.0",
+    "escape-html": "^1.0.3",
     "history": "1.17.0",
     "imagemin-cli": "^2.0.0",
     "jade": "^1.11.0",
@@ -46,6 +48,7 @@
     "static-site-generator-webpack-plugin": "^1.3.0",
     "stylus-loader": "^1.4.2",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "yamljs": "^0.2.4"
   }
 }

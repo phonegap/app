@@ -44,6 +44,6 @@ module.exports = {
     return [autoprefixer];
   },
   plugins: [
-    new StaticSiteGeneratorPlugin('main', data.routes(), data)
+    new StaticSiteGeneratorPlugin('main', data.routes, data)
   ]
 }
