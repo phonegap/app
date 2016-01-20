@@ -25971,7 +25971,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                  { key: index },
 	                  _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: '/app/{permalink}' },
+	                    { to: "/app" + permalink },
 	                    permalink
 	                  )
 	                );

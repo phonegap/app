@@ -42,7 +42,7 @@ export default class Home extends React.Component {
             <ul>
             {data.routes.map((permalink, index) =>
               <li key={index}>
-                <Link to="/app/{permalink}">{permalink}</Link>
+                <Link to={"/app"+permalink}>{permalink}</Link>
               </li>
             )}
             </ul>
