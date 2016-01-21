@@ -1,6 +1,8 @@
 var fs = require("fs");
 var YAML = require('yamljs');
 var escape = require('escape-html');
+var jade = require('jade');
+var mkdirp = require('mkdirp');
 
 var _getAllFilesFromFolder = function(dir) {
     var filesystem = require("fs");
@@ -23,21 +25,56 @@ var _splitPostFile = function (rawString) {
   }
 }
 
-var _finishedFiles = function () {
-  var fileString = JSON.stringify(dataArray, null, 2);
-  var permalinks = ["/"];
-  dataArray.map(function(post){
-    var permalink = post.permalink;
-    permalinks.push(permalink.replace("/app/","/"));
+var _writeAppPage = function(app){
+  if (app.slug == undefined) {
+    app.slug = app.permalink.split('/')[2];
+  }
+  mkdirp('./_site/'+app.slug, function (err) {
+    if (err) {
+      console.error(err)
+    } else {
+      var html = appFn(app);
+      fs.writeFile('./_site/'+app.slug+'/index.html', html, function(err) {
+          if(err) {
+              return console.log(err);
+          }
+          console.log(app.slug);
+      });
+    }
   });
-  fileString = "module.exports = {\n  posts:"+fileString+",";
-  fileString += "\n  routes:"+JSON.stringify(permalinks, null, 2)+"\n}";
-  fs.writeFile("./data.js", fileString, function(err) {
-      if(err) {
-          return console.log(err);
-      }
-      console.log("The file was saved!");
+}
+
+var _writeAppPaginatePage = function(apps, pageNumber, pageTotal){
+  var path = pageNumber == 0 ? './_site/' : './_site/page'+(pageNumber+1)+'/';
+  mkdirp(path, function (err) {
+    if (err) {
+      console.error(err)
+    } else {
+      var html = appPaginateFn({apps:apps, pageNumber:(pageNumber+1), pageTotal:pageTotal});
+      fs.writeFile(path+'index.html', html, function(err) {
+          if(err) {
+              return console.log(err);
+          }
+          console.log(path);
+      });
+    }
   });
+}
+
+var appFn = jade.compileFile('./src/layouts/app.jade');
+var appPaginateFn = jade.compileFile('./src/layouts/app-paginate.jade');
+
+var _finishedParsingFiles = function () {
+  dataArray.forEach(_writeAppPage);
+
+  var appsPerPage = 30;
+  var pageCount = 0;
+  var pageTotal = Math.ceil(dataArray.length / appsPerPage);
+  while (pageCount * appsPerPage < dataArray.length){
+    var pageSet = dataArray.slice(pageCount * appsPerPage, pageCount * appsPerPage + appsPerPage);
+    _writeAppPaginatePage(pageSet, pageCount, pageTotal);
+    pageCount++;
+  }
 }
 
 var _readFile = function (filepath) {
@@ -56,7 +93,7 @@ var _readFile = function (filepath) {
     dataObj.post = tempObj.post;
     dataArray.push(dataObj);
     if(dataArray.length == postFiles.length){
-      _finishedFiles();
+      _finishedParsingFiles();
     }
   })
 };

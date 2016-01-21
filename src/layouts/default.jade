@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+
+  head
+    title PhoneGap App Showcase
+    block meta
+      meta(name="viewport", content="initial-scale=1.0")
+      script(src="//use.typekit.net/exp7awb.js")
+      script(src="//assets.adobedtm.com/659ec8ada5450db95675e43beaaae92399591a11/satelliteLib-46e65db5bb0c375f8f64619be31cc9b29acf4867.js")
+      script(type='text/javascript').
+        try{Typekit.load();}catch(e){}
+      script(src="http://phonegap.github.io/scripts/home.js")
+      script(src="http://phonegap.github.io/scripts/mobile_nav.js")
+    block styles
+      link(href='/styles/zenburn-highlight.css', rel='stylesheet')
+      link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='http://phonegap.github.io/styles/main.css', rel='stylesheet')
+      link(href='/styles/index.css', rel='stylesheet')
+
+
+  body
+    block site-header
+      include ./includes/site-header.jade
+    .page-content: .wrapper
+      .subheader: .bounds
+        h1 App Showcase
+        .subheader__description Ever wondered who is building amazing apps using PhoneGap? Find out here.
+    .content
+      block content
+        != content
+              
+    block site-footer
+      include ./includes/site-footer.jade
+
+    block scripts
+
+    include ./includes/analytics.jade

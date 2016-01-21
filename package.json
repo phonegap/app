@@ -4,13 +4,12 @@
   "description": "The app showcase found at http://phonegap.github.io/app",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack --progress --colors",
-    "dev": "webpack-dev-server --progress --colors",
     "build": "node build_data.js",
-    "build:images": "imagemin ./img ./_site/img",
-    "build:production": "npm run webpack && npm run build:images",
-    "start": "node build_data.js && npm run dev",
-    "deploy": "npm run build:production && git subtree push --prefix _site origin gh-pages"
+    "deploy": "git subtree push --prefix _site origin gh-pages",
+    "clean": "rm -rf _site/*",
+    "watch": "watch 'npm run build' ./src",
+    "browser-sync": "browser-sync start --server _site --files _site",
+    "start": "npm run watch & npm run browser-sync"
   },
   "repository": {
     "type": "git",
@@ -32,6 +31,7 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "browser-sync": "^2.11.1",
     "circular-json": "^0.3.0",
     "css-loader": "^0.23.0",
     "escape-html": "^1.0.3",
@@ -39,6 +39,7 @@
     "imagemin-cli": "^2.0.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
+    "mkdirp": "^0.5.1",
     "postcss-loader": "^0.8.0",
     "raw-loader": "^0.5.1",
     "react": "^0.14.3",
