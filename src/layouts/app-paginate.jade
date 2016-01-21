@@ -9,5 +9,57 @@ block content
           img(src=app.thumb width="100" height="100")
           h2.app-title= app.title
           .app-author= "by "+app.author
-  .pagination= pageNumber +" of "+pageTotal
-        
+  //- pageNumber +" of "+pageTotal
+  .pagination
+    if pageNumber > 2
+      a.pagination__previous(href="/app/page"+(pageNumber - 1))
+        svg(xmlns='http://www.w3.org/2000/svg', width='7', height='13', viewbox='0 0 7 13'): path(d='M7 6.5c0 .2-.1.4-.2.5l-5.5 5.5c-.3.3-.8.3-1 0s-.3-.8 0-1l5-5-5-5c-.3-.3-.3-.8 0-1s.8-.3 1 0l5.5 5.5c.1.1.2.3.2.5z')
+        | Newer
+    else if pageNumber == 2
+      a.pagination__previous(href="/app/")
+        svg(xmlns='http://www.w3.org/2000/svg', width='7', height='13', viewbox='0 0 7 13'): path(d='M7 6.5c0 .2-.1.4-.2.5l-5.5 5.5c-.3.3-.8.3-1 0s-.3-.8 0-1l5-5-5-5c-.3-.3-.3-.8 0-1s.8-.3 1 0l5.5 5.5c.1.1.2.3.2.5z')
+        | Newer
+    else
+      span.pagination__previous
+        svg(xmlns='http://www.w3.org/2000/svg', width='7', height='13', viewbox='0 0 7 13'): path(d='M7 6.5c0 .2-.1.4-.2.5l-5.5 5.5c-.3.3-.8.3-1 0s-.3-.8 0-1l5-5-5-5c-.3-.3-.3-.8 0-1s.8-.3 1 0l5.5 5.5c.1.1.2.3.2.5z')
+        | Newer
+    - var paginateListCount = 7;
+    - var paginationPadding = Math.floor(paginateListCount / 2);
+    - var lowerLimit = pageNumber - paginationPadding;
+    - var upperLimit = pageNumber + paginationPadding;
+    - var countStart;
+    - var countEnd;
+    if pageTotal > paginateListCount
+      if lowerLimit <= 0
+        - countStart = 1
+        - countEnd = paginateListCount
+      else if upperLimit > pageTotal
+        - countStart = pageNumber  - paginateListCount + 1
+        - countEnd = pageTotal
+      else
+        - countStart = pageNumber - paginationPadding
+        - countEnd = pageNumber + paginationPadding
+    else
+      - countStart = 1
+      - countEnd = pageTotal
+    - var count = countStart
+    
+    while count <= countEnd
+      if count == pageNumber
+        span.pagination__page--current= count
+      else
+        if count == 1
+          a.pagination__page(href="/app")= count
+        else
+          a.pagination__page(href="/app/page"+count)= count
+      - count++
+    
+    if pageNumber < pageTotal
+      a.pagination__next(href="/app/page"+(pageNumber + 1))
+        | Older
+        svg(xmlns='http://www.w3.org/2000/svg', width='7', height='13', viewbox='0 0 7 13'): path(d='M7 6.5c0 .2-.1.4-.2.5l-5.5 5.5c-.3.3-.8.3-1 0s-.3-.8 0-1l5-5-5-5c-.3-.3-.3-.8 0-1s.8-.3 1 0l5.5 5.5c.1.1.2.3.2.5z')
+    else
+      span.pagination__next
+        | Older
+        svg(xmlns='http://www.w3.org/2000/svg', width='7', height='13', viewbox='0 0 7 13'): path(d='M7 6.5c0 .2-.1.4-.2.5l-5.5 5.5c-.3.3-.8.3-1 0s-.3-.8 0-1l5-5-5-5c-.3-.3-.3-.8 0-1s.8-.3 1 0l5.5 5.5c.1.1.2.3.2.5z')
+      
