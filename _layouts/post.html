@@ -40,6 +40,20 @@ layout: default
     </header>
     {{ content }}
     <div id="screenshots" class="app-screenshots"></div>
+    <div class="app-stores">
+      <h2>Download this app from:</h2>
+      {% for device in page.devices %}
+        {% if device == 'ios' %}
+          <a href="{{ page.ios_link }}" class="button--cta">{% include images/apple.svg %} The App Store</a>
+        {% endif %}
+        {% if device == 'android' %}
+          <a href="{{ page.android_link }}" class="button--cta">{% include images/android.svg %} Google Play</a>
+        {% endif %}
+        {% if device == 'windows_phone' %}
+          <a href="{{ page.windows_phone_link }}" class="button--cta">{% include images/windows.svg %} The Windows Store</a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </article>
   <footer class="app--page__nav">
     {% if page.previous.url %}
