@@ -12,7 +12,7 @@
     -webkit-justify-content: space-around
     -ms-flex-pack: distribute
     justify-content: space-around
-    padding-bottom: 100px
+    padding: 0 0 100px 0
   &__thumbnail
     flex-basis: 200px
     min-height: 225px
@@ -25,7 +25,7 @@
     box-shadow: 0px 2px 1px 1px rgba(0,0,0,0.3)
 .hidden
   display: none
-.app-filter
+.app-filters
   background: #f2f2f2
   box-sizing: border-box
   padding: 2px 10px
@@ -35,8 +35,13 @@
     font-size: .875rem
     text-transform: uppercase
     margin-left: 5px
+.app-filter
+  display: block
 .app-filter__input
   margin-left: 20px
-// @media (min-width: 580px)
+@media (min-width: 480px)
+  .app-filter
+    display: inline-block
+
 //   .app
 //     &__image

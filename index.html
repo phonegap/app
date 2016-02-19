@@ -7,8 +7,8 @@ extra_js:
 {% include subheader.html %}
 <div class="bounds">
   <!-- This loops through the posts -->
-  <div class="app-filter">
-    Narrow by platform: <input class="app-filter__input" data-device="ios" type="checkbox" name="ios-filter" id="ios-filter" checked> <label for="ios-filter">IOS</label> <input class="app-filter__input" data-device="android" type="checkbox" name="android-filter" id="android-filter" checked> <label for="android-filter">Android</label> <input class="app-filter__input" data-device="windows_phone" type="checkbox" name="windows-filter" id="windows-filter" checked> <label for="windows-filter">Windows</label>
+  <div class="app-filters">
+    Narrow by platform: <span class="app-filter"><input class="app-filter__input" data-device="ios" type="checkbox" name="ios-filter" id="ios-filter" checked> <label for="ios-filter">IOS</label></span> <span class="app-filter"><input class="app-filter__input" data-device="android" type="checkbox" name="android-filter" id="android-filter" checked> <label for="android-filter">Android</label></span> <span class="app-filter"><input class="app-filter__input" data-device="windows_phone" type="checkbox" name="windows-filter" id="windows-filter" checked> <label for="windows-filter">Windows</label></span>
   </div>
   <ul class="app-list">
     {% for post in site.posts %}
