@@ -1,7 +1,7 @@
 ---
 developer_link: http://sworkit.com
 thumb: /uploads/v2/2013-03-06-sworkit-pro.png
-permalink: /app/sworkit-pro
+permalink: /sworkit-pro/
 android_link: https://play.google.com/store/apps/details?id=sworkitproapp.sworkit.com
 email: ryan@sworkit.com
 devices:

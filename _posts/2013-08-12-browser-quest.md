@@ -8,7 +8,7 @@ title: BrowserQuest
 devices:
 - ios
 - windows_phone
-permalink: /app/browserquest
+permalink: /browserquest/
 developer_link: http://mpbrun.dk/
 targetMarket: Personal
 windows_phone_link: http://www.windowsphone.com/en-us/store/app/browserquest/9df4ba1e-fa73-40d1-b391-4773d287db35
