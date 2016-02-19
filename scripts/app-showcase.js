@@ -25,33 +25,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         thumbnail.classList.add('hidden');
       }
     });
-
-    // if(filterString.trim() != ''){
-    //   console.log(filterString)
-    //   console.log(Sizzle('.app__thumbnail:not('+filterString+')'));
-    // }
   }
   checkboxArray.forEach(function(checkbox){
-
     checkbox.onchange=function(){
       filterItems();
-      // if (checkbox.checked) {
-      //   Sizzle('.'+checkbox.dataset.device).forEach(function(appItem){
-      //     appItem.classList.remove('hidden');
-      //   });
-      // } else {
-      //   Sizzle('.'+checkbox.dataset.device).forEach(function(appItem){
-      //     appItem.classList.add('hidden');
-      //   });
-      // }
     };
-
-    // if (checkbox.checked){
-    //
-    //   var deviceTag = Sizzle(checkbox.dataset.device);
-    //
-    //
-    // }
-
   });
 });
