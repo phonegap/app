@@ -1,0 +1,9 @@
+---
+title:
+layout: post
+author:
+thumb:
+publisher:
+link:
+type: book
+---
