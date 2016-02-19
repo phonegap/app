@@ -9,13 +9,11 @@
       </h1>
     </div>
     <nav class="site-header__nav">
-      {% assign current = page.url | downcase | split: '/' %}
-      <div class="Test">{{ current[1] }}</div>
       <ul>
         <li><a href="/products" {% if current[1] == 'products' %}class='current'{% endif %}>Products</a></li>
         <li><a href="/getstarted" {% if current[1] == 'getstarted' %}class="current"{% endif %}>Get Started</a></li>
         <li><a href="http://docs.phonegap.com">Docs</a></li>
-        <li><a href="/app" {% if current[1] == 'app' %}class='current'{% endif %}>App Showcase</a></li>
+        <li><a href="/app" class='current'>App Showcase</a></li>
         <li><a href="/blog" {% if current[1] == 'blog' %}class='current'{% endif %}>Blog</a></li>
       </ul>
       <button class="site-header__expand-button" id="site-header__expand-button">Site Menu</button>
