@@ -39,9 +39,40 @@
   display: block
 .app-filter__input
   margin-left: 20px
+.app-description
+  max-width: 700px
+  position: relative
+  margin: 0 auto
+  padding: 0
+.app-screenshots
+  display: block
+  text-align: center
+  img
+    margin: 0 15px 30px
+    width: 100%
+    max-width: 320px
+    height: auto
+    &:nth-child(2n-1)
+      margin-right: 15px
+.app-description__header
+  display: flex
+  align-content: flex-end
+  img
+    margin-right: 24px
+  & > div:last-child
+    align-self: flex-end
+.app-description__title
+  font-size: 1.875rem
+  margin: 0
 @media (min-width: 480px)
   .app-filter
     display: inline-block
-
-//   .app
-//     &__image
+@media (min-width: 710px)
+  .app-screenshots
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    img
+      margin: 0 0 30px
+      &:nth-child(2n-1)
+        margin-right: 30px

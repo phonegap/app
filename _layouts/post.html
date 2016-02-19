@@ -13,26 +13,33 @@ layout: default
           var screenshotsDiv = document.getElementById('screenshots');
           screenshotUrls.forEach(function(screenshotUrl){
             var image = document.createElement("img");
+            var div = document.createElement("div");
+            div.appendChild(image);
             image.src = screenshotUrl;
-            screenshotsDiv.appendChild(image);
+            screenshotsDiv.appendChild(div);
           });
       })
       .go();
   });
 </script>
+{% include subheader.html %}
 <div class="bounds">
   <article class="app-description">
-    <header>
-      {% if jekyll.environment == "production" %}
-        <img class="app__thumbnail__image" src="{{ page.thumb | prepend: site.baseurl | prepend: site.url }}" width="100" alt="{{ page.title }}"/>
-      {% else %}
-        <img class="app__thumbnail__image" src="{{ page.thumb }}" width="100" alt="{{ page.title }}"/>
-      {% endif %}
-      <h2>{{ page.title }}</h2>
-      <div>by <a href="{{ page.developer_link }}">{{ page.developer }}</a> | Added {{ page.date | date: "%-d %b %Y" }}</div>
+    <header class="app-description__header">
+      <div>
+        {% if jekyll.environment == "production" %}
+          <img class="app__thumbnail__image" src="{{ page.thumb | prepend: site.baseurl | prepend: site.url }}" width="100" alt="{{ page.title }}"/>
+        {% else %}
+          <img class="app__thumbnail__image" src="{{ page.thumb }}" width="100" alt="{{ page.title }}"/>
+        {% endif %}
+      </div>
+      <div>
+        <h2 class="app-description__title">{{ page.title }}</h2>
+        <div>by <a href="{{ page.developer_link }}">{{ page.developer }}</a> | Added {{ page.date | date: "%-d %b %Y" }}</div>
+      </div>
     </header>
     {{ content }}
-    <div id="screenshots"></div>
+    <div id="screenshots" class="app-screenshots"></div>
   </article>
 </div>
 <div class="sub-footer">
