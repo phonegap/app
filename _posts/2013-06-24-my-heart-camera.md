@@ -4,7 +4,7 @@ ios_link: https://itunes.apple.com/us/app/my-heart-camera-lovely-cute/id65722439
 title: My Heart Camera
 type: app
 email: kawanobe@andg.net
-permalink: /my-heart-camera/
+permalink: /app/my-heart-camera
 status: publish
 devices:
 - ios

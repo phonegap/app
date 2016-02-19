@@ -12,11 +12,11 @@ devices:
 - windows_phone
 email: toby@velkat.com
 developer_link: http://www.yogabyallison.com/www/index.php?/default/action/products/
-permalink: /yoga-travel/
+permalink: /app/yoga-travel
 developer: Velkat IT Solutions Inc. / Yoga By Allison
 date: 2013-05-20 20:32:47.695260 +00:00
 feature: true
-feature_image: /uploads/v2/yoga_travel.jpg
+feature_image: /uploads/feature/yoga_travel.jpg
 layout: post
 ---
 

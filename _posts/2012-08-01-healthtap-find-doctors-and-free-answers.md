@@ -1,6 +1,6 @@
 ---
 itunes_id: "466079030"
-title: HealthTap
+title: HealthTap - find doctors and free answers
 date: 2012-08-04 02:29:39.466144 +00:00
 email: sean@healthtap.com
 android_link: https://play.google.com/store/apps/details?id=com.healthtap.userhtexpress
@@ -10,7 +10,7 @@ devices:
 - android
 targetMarket: Personal
 thumb: /uploads/v2/2012-08-01-healthtap-find-doctors-and-free-answers.png
-permalink: /healthtap-find-doctors-and-free-answers
+permalink: /app/healthtap-find-doctors-and-free-answers
 type: app
 status: publish
 developer_link: https://www.healthtap.com/
