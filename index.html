@@ -8,7 +8,11 @@ title: PhoneGap Books
   <ul class="app-list">
     {% for post in site.posts %}
       <li class="app__thumbnail">
-        <a href="{{ post.url }}">
+        {% if jekyll.environment == "production" %}
+          <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+        {% else %}
+          <a href="{{ post.url }}">
+        {% endif %}
           {% if jekyll.environment == "production" %}
             <img class="app__thumbnail__image" src="{{ post.thumb | prepend: site.baseurl | prepend: site.url }}" width="100" alt="{{ post.title }}"/>
           {% else %}
