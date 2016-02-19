@@ -1,6 +1,6 @@
 title: App Showcase
 description: Ever wondered who is building amazing apps using PhoneGap?
-baseurl: "/book" # the subpath of your site, e.g. /blog
+baseurl: "/app" # the subpath of your site, e.g. /blog
 url: "http://phonegap.github.io" # the base hostname & protocol for your site
 
 paginate: 10
