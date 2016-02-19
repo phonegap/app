@@ -19,6 +19,7 @@ android_link: https://play.google.com/store/apps/details?id=it.wemakeawesomesh.s
 title: snowbuddy
 type: app
 developer: We Make Awesome Sh
+layout: post
 ---
 
 During our second alpine company meeting, we were looking for ski apps to use on the mountain. After downloading and testing a few of the ‘top apps’, we discovered some major flaws and omissions. These apps only really tracked speed, distance and calories and although some apps give you other useful data such as resort information and weather there was a serious lack of design and fun. Constantly competing to beat yours and your friends’ top speeds is not only challenging (most people can only hit a certain top speed and can rarely exceed it, particularly on a weeks’ ski trip) but it is also dangerous. It’s not about pushing yourself to the point of losing control, it’s about riding the mountain in perfect control, and having fun while doing it. For us, being on the mountain with your mates was more about having fun. So that’s what we made snowbuddy all about.

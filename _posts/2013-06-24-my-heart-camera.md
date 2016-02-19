@@ -15,6 +15,7 @@ developer_link: http://apmaga.heteml.jp/_app/heartcamera/
 targetMarket: Personal
 feature_image: /uploads/feature/myheartcamera.jpg
 feature: true
+layout: post
 ---
 
 Let's decorate your photos with lovely hearts!

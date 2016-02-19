@@ -15,6 +15,7 @@ type: app
 ios_link: https://itunes.apple.com/us/app/sworkit-pro/id539623568
 title: Sworkit Pro
 status: publish
+layout: post
 ---
 
 Awesome Randomized Circuit Training Workouts that keep you motivated to exercise and stay fit. Choose the part of body to workout and for how long. Sworkit creates the perfect workout anywhere, anytime. No weights or extra equipment required.

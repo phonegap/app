@@ -18,6 +18,7 @@ developer: HealthTap
 feature: true
 sticky: 5
 feature_image: /uploads/feature/healthtap.jpg
+layout: post
 ---
 
 HealthTap is the best way to quickly find, trusted, reputable doctor answers to health questions anytime, anywhere for free!

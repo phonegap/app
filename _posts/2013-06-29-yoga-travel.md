@@ -17,6 +17,7 @@ developer: Velkat IT Solutions Inc. / Yoga By Allison
 date: 2013-05-20 20:32:47.695260 +00:00
 feature: true
 feature_image: /uploads/v2/yoga_travel.jpg
+layout: post
 ---
 
 Do you ever leave home for business or leisure travel and miss your favorite yoga class? In a new city and don’t know where to take class or can’t fit class into your busy schedule? This is the app for you! Yoga+Travel is the ideal app to take your yoga practice with you on the road. With safe, fun and effective sequenced classes for all levels, you never have to leave home without taking your yoga with you.

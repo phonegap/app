@@ -16,6 +16,7 @@ thumb: /uploads/v2/browserquest_thumb.png
 status: publish
 feature: true
 feature_image: /uploads/feature/browserquest.jpg
+layout: post
 ---
 
 BrowserQuest is a small multiplayer game inviting you to explore a world of adventure from your Windows Phone.
