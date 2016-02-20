@@ -10,7 +10,7 @@ devices:
 - android
 targetMarket: Personal
 thumb: /uploads/v2/2012-08-01-healthtap-find-doctors-and-free-answers.png
-permalink: /app/healthtap-find-doctors-and-free-answers
+permalink: /healthtap-find-doctors-and-free-answers/
 type: app
 status: publish
 developer_link: https://www.healthtap.com/

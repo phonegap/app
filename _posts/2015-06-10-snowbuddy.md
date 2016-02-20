@@ -4,7 +4,7 @@ highlight: true
 feature: true
 feature_image: /uploads/feature/snowbuddy-banner.jpg
 developer_link: http://snowbuddyhq.com/
-permalink: /app/snowbuddy
+permalink: /snowbuddy/
 thumb: /uploads/v2/2015-06-10-snowbuddy.png
 targetMarket: Personal
 itunes_id: "932977366"
