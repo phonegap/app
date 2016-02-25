@@ -19,17 +19,9 @@
   {% endif %}
 
   {% for js_name in page.extra_js %}
-    {% if jekyll.environment == "production" %}
-      <script src="{{ js_name | prepend: '/app/scripts/' }}"></script>
-    {% else %}
-      <script src="{{ js_name | prepend: '/scripts/' }}"></script>
-    {% endif %}
+    <script src="{{ js_name | prepend: '/app/scripts/' }}"></script>
   {% endfor %}
-  {% if jekyll.environment == "production" %}
-    <link rel="stylesheet" type="text/css" href="{{ "/styles/main.css" | prepend: site.url }}"/>
-  {% else %}
-    <link rel="stylesheet" type="text/css" href="{{ "/styles/main.css" | prepend: site.baseurl | prepend: site.url }}"/>
-  {% endif %}
+  <link rel="stylesheet" type="text/css" href="{{ "/styles/main.css" | prepend: site.url }}"/>
   <style type="text/css">
       {% capture include_to_sassify %}{% include app.sass %}{% endcapture %}
       {{ include_to_sassify | sassify }}

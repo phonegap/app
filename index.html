@@ -17,16 +17,8 @@ extra_js:
         {% assign device_tags = device_tags | append: ' ' | append: device %}
       {% endfor %}
       <li class="app__thumbnail {{ device_tags }}">
-        {% if jekyll.environment == "production" %}
-          <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-        {% else %}
-          <a href="{{ post.url }}">
-        {% endif %}
-          {% if jekyll.environment == "production" %}
-            <img class="app__thumbnail__image" src="{{ post.thumb | prepend: site.baseurl | prepend: site.url }}" width="100" alt="{{ post.title }}"/>
-          {% else %}
-            <img class="app__thumbnail__image" src="{{ post.thumb }}" width="100" alt="{{ post.title }}"/>
-          {% endif %}
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <img class="app__thumbnail__image" src="{{ post.thumb | prepend: site.baseurl }}" width="100" alt="{{ post.title }}"/>
           <h2 class="app__title">{{ post.title }}</h2>
         </a>
         <div class="app__author">by {{ post.developer }}</div>

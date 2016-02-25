@@ -27,11 +27,7 @@ layout: default
   <article class="app-description">
     <header class="app-description__header">
       <div>
-        {% if jekyll.environment == "production" %}
-          <img class="app__thumbnail__image" src="{{ page.thumb | prepend: site.baseurl | prepend: site.url }}" width="100" alt="{{ page.title }}"/>
-        {% else %}
-          <img class="app__thumbnail__image" src="{{ page.thumb }}" width="100" alt="{{ page.title }}"/>
-        {% endif %}
+        <img class="app__thumbnail__image" src="{{ page.thumb | prepend: site.baseurl }}" width="100" alt="{{ page.title }}"/>
       </div>
       <div>
         <h2 class="app-description__title">{{ page.title }}</h2>
