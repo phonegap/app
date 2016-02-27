@@ -52,12 +52,12 @@ layout: default
     </div>
   </article>
   <footer class="app--page__nav">
-    {% if page.previous.url %}
-      <a class="button--pill--prev--gray" href="{{page.previous.url}}">{{page.previous.title}}</a>
-    {% endif %}
-      <a class="button--pill--gray" href="/app">Return</a>
     {% if page.next.url %}
-      <a class="button--pill--next--gray" href="{{page.next.url}}">{{page.next.title}}</a>
+      <a class="button--pill--prev--gray" href="{{ page.next.url| prepend: site.baseurl }}">{{page.next.title}}</a>
+    {% endif %}
+      <a class="button--pill--gray" href="{{ site.baseurl }}">Return</a>
+    {% if page.previous.url %}
+      <a class="button--pill--next--gray" href="{{ page.previous.url| prepend: site.baseurl }}">{{page.previous.title}}</a>
     {% endif %}
   </footer>
 </div>
