@@ -22,4 +22,4 @@ layout: post
 
 Do you ever leave home for business or leisure travel and miss your favorite yoga class? In a new city and don’t know where to take class or can’t fit class into your busy schedule? This is the app for you! Yoga+Travel is the ideal app to take your yoga practice with you on the road. With safe, fun and effective sequenced classes for all levels, you never have to leave home without taking your yoga with you.
 
-Winner of the [Windows Phone App Porting Challenge](http://www.phonegapwpchallenge.com/)
+Winner of the <a href="http://www.phonegapwpchallenge.com/" data-proofer-ignore>Windows Phone App Porting Challenge</a>

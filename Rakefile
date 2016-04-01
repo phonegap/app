@@ -4,7 +4,7 @@ require 'rake'
 require 'yaml'
 require 'fileutils'
 require 'rbconfig'
-require 'html/proofer'
+require 'html-proofer'
 
 # == Configuration =============================================================
 
@@ -139,34 +139,44 @@ desc "Serve and watch the site (with post limit or drafts)"
 task :watch, :option do |t, args|
   option = args[:option]
   if option.nil? or option.empty?
-    execute("jekyll serve --watch --baseurl ''")
+    execute("jekyll serve --watch")
   else
     if option == "drafts"
-      execute("jekyll serve --watch --drafts --baseurl ''")
+      execute("jekyll serve --watch --drafts")
     else
-      execute("jekyll serve --watch --baseurl '' --limit_posts #{option}")
+      execute("jekyll serve --watch --limit_posts #{option}")
     end
   end
-end
-
-# rake preview
-desc "Launch a preview of the site in the browser"
-task :preview do
-  port = CONFIG["port"]
-  if port.nil? or port.empty?
-    port = 4000
-  end
-  Thread.new do
-    puts "Launching browser for preview..."
-    sleep 1
-    execute("#{open_command} http://localhost:#{port}/")
-  end
-  Rake::Task[:watch].invoke
 end
 
 # rake test
 desc "build and test website"
 task :test do
-  sh "bundle exec jekyll build"
-  HTML::Proofer.new("./_site", {:typhoeus => { :followlocation => true, :ssl_verifypeer => false, :headers => { 'User-Agent' => 'html-proofer' } }}).run
+  sh "bundle exec jekyll build --config _config-test.yml"
+  HTMLProofer.check_directory("./_site", {
+    :empty_alt_ignore => true,
+    :url_ignore => [
+      /\/app\/?/,
+      /\/blog\/?/,
+      '/book/',
+      '/tool/',
+      '/event/',
+      '/getstarted/',
+      '/products/',
+      '/about/',
+      '/about/faq/',
+      '/about/license/',
+      '/about/logos/',
+      /\/getstarted\/?/,
+      /\/products\/?/,
+    ],
+    :cache => {
+      :timeframe => '1d'
+    },
+    :typhoeus => {
+      :followlocation => true,
+      :ssl_verifypeer => false,
+      :headers => { 'User-Agent' => 'html-proofer' }
+    }
+  }).run
 end

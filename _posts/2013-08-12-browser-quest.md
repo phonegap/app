@@ -30,4 +30,4 @@ Note: This version of BrowserQuest is a extended version, which has been extende
 
 Support: If you experience any errors, then please contact us by e-mail (apps@mpbrun.dk), as we cannot contact you through a review. We can then fix possible errors very quickly.
 
-Winner of the [Windows Phone App Porting Challenge](http://www.phonegapwpchallenge.com/)
+Winner of the <a href="http://www.phonegapwpchallenge.com/" data-proofer-ignore>Windows Phone App Porting Challenge</a>
