@@ -169,6 +169,7 @@ task :test do
       '/about/logos/',
       /\/getstarted\/?/,
       /\/products\/?/,
+      'http://untappd.com/'
     ],
     :cache => {
       :timeframe => '1d'
