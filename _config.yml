@@ -6,6 +6,7 @@ url: "http://phonegap.com" # the base hostname & protocol for your site
 gems:
   - jekyll-paginate
   - jekyll-coffeescript
+  - jekyll-sitemap
 
 paginate: 10
 paginate_list_count: 7
