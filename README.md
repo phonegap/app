@@ -1,2 +1,2 @@
-# book
-http://phonegap.com/book/
+# App Showcase
+http://phonegap.com/app/
