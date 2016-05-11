@@ -37,7 +37,7 @@ layout: default
     {{ content }}
     <div id="screenshots" class="app-screenshots"></div>
     <div class="app-stores">
-      <h2>Download this app from:</h2>
+      <h4>Download this app from:</h4>
       {% for device in page.devices %}
         {% if device == 'ios' %}
           <a href="{{ page.ios_link }}" class="button--cta">{% include images/apple.svg %} The App Store</a>
