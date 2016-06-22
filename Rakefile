@@ -167,6 +167,7 @@ task :test do
       '/about/faq/',
       '/about/license/',
       '/about/logos/',
+      '/about/contact/',
       /\/getstarted\/?/,
       /\/products\/?/,
       'http://untappd.com/'
