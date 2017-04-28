@@ -3,8 +3,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | xml_escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_html | strip_newlines | xml_escape }}{% endif %}">
 
   <script src="//use.typekit.net/exp7awb.js"></script>
   <script src="//assets.adobedtm.com/659ec8ada5450db95675e43beaaae92399591a11/satelliteLib-46e65db5bb0c375f8f64619be31cc9b29acf4867.js"></script>
@@ -21,7 +21,8 @@
   {% for js_name in page.extra_js %}
     <script src="{{ js_name | prepend: '/app/scripts/' }}"></script>
   {% endfor %}
-  <link rel="stylesheet" type="text/css" href="{{ "/styles/main.css" | prepend: site.url }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ '/styles/main.css' | prepend: site.url }}"/>
+  <link rel="icon" type="image/png" href="{{ '/favicon.ico' | prepend: site.url }}">
   <style type="text/css">
       {% capture include_to_sassify %}{% include app.sass %}{% endcapture %}
       {{ include_to_sassify | sassify }}
